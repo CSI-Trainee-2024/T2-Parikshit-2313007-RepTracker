@@ -13,13 +13,16 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Workout In Progress</h1>
+    <div class="container-workout">
+        <div class="title" style="display: flex; justify-content: center; align-items: center;">
+            <h1>Workout In Progress</h1>
+            <button id="quitExercise">End Session <i class="fa-solid fa-circle-chevron-right"></i></button>
+        </div>
 
         <div class="current-workout">
-            <h3 id="currentExercise">Current Exercise: None</h3>
-            <p id="timer">Timer: 0s</p>
-            <button id="endExerciseBtn" disabled>End Exercise</button>
+            <h3 id="currentExercise">Session Begins in</h3>
+            <p id="timer"></p>
+            <button id="endExerciseBtn" disabled>Exercise Done <i class="fa-solid fa-circle-chevron-right"></i></button>
         </div>
     </div>
 

@@ -64,7 +64,7 @@ function startExercise() {
 // Start rest period
 function startRest() {
   if (currentWorkoutIndex < workouts.length) {
-    currentExercise.textContent = `Resting...`;
+    currentExercise.textContent = `Resting Time...`;
     startCountdown(restTime, startExercise);
   }
 }
@@ -101,5 +101,9 @@ function updateTimerDisplay() {
   const minutes = Math.floor(currentTime / 60);
   const seconds = currentTime % 60;
   const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-  timerDisplay.textContent = `Timer: ${minutes}:${formattedSeconds}`;
+  timerDisplay.textContent = `${minutes}:${formattedSeconds}`;
 }
+document.getElementById("quitExercise").addEventListener("click", () => {
+  window.location.href = "index.html"; // Redirect to the add exercise page
+  localStorage.removeItem("workoutLog");
+});
