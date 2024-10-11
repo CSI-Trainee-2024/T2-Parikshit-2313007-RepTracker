@@ -1,4 +1,4 @@
-let addWorkout = document.querySelector("#addWorkout");
+let addWorkoutBtn = document.querySelector("#addWorkoutBtn");
 
 let workouts;
 
@@ -75,7 +75,7 @@ function addEntry() {
   }
 }
 
-addWorkout.addEventListener("click", addEntry);
+addWorkoutBtn.addEventListener("click", addEntry);
 
 document.querySelector("#startWorkoutBtn").addEventListener("click", () => {
   if (workouts.length > 0) {
