@@ -9,23 +9,24 @@
 </head>
 
 <body>
-    <div class="head">
-        <h1>Track Your Reps & Time Efficiency</h1>
-        <Button>Begin Workout</Button>
-    </div>
-    <hr>
-    <div class="main">
-        <input id="workout" type="text" placeholder="Add Your Exercise">
-        <input id="reps" type="number" placeholder="Enter Reps">
-        <input id="timeLimit" type="time" placeholder="Specify Time Limit">
-        <button id="addWorkout">Add to Workout Plan</button>
-    </div>
-    <div class="container">
-        <ul class="table">
-
-        </ul>
+    <div class="home">
+        <div class="head">
+            <h1>Track Your Reps & Time Efficiency</h1>
+            <Button id="startWorkoutBtn">Begin Workout</Button>
+        </div>
+        <hr>
+        <div class="main">
+            <input id="workout" type="text" placeholder="Add Your Exercise" value="pushup">
+            <input id="reps" type="number" placeholder="Enter Reps" value="10">
+            <input id="timeLimit" type="time" placeholder="Specify Time Limit" value="00:20">
+            <button id="addWorkout">Add to Workout Plan</button>
+        </div>
+        <div class="container">
+            <ul class="table">
+            </ul>
+        </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script src="index.js"></script>
 
 </html>
