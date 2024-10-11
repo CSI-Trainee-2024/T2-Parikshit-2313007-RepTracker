@@ -14,19 +14,30 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Workout Log</h1>
+    <div class="main-container">
+        <div class="container">
+            <div class="title" style="display: flex; justify-content: space-around; align-items: center;">
+                <h1>Workout Stats</h1>
+                <button id="restartBtn">New Session <i class="fa-solid fa-circle-chevron-right"></i></button>
+            </div>
 
-        <div class="workout-log">
-            <h3>Your Completed Exercises</h3>
-            <ul id="workoutLog"></ul>
-        </div>
+            <div class="workout-log">
+                <h3>Your Completed Exercises</h3>
+                <ul id="workoutLog" class="responsive-table">
+                    <li class="table-header">
+                        <div class="col col-1">S no.</div>
+                        <div class="col col-2">Exercise Name</div>
+                        <div class="col col-3">Planned Time</div>
+                        <div class="col col-4">Actual Completion Time</div>
+                    </li>
+                </ul>
+                <div style="text-align: center;">
+                    <button id="goBackBtn">Add More Exercises</button>
+                </div>
+            </div>
 
-        <div>
-            <button id="goBackBtn">Add More Exercises</button>
         </div>
     </div>
-
     <script src="./js/log.js"></script>
 </body>
 

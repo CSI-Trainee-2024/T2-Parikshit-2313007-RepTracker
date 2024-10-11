@@ -13,7 +13,6 @@ function formatTime(unFormatedTime) {
   const seconds = unFormatedTime % 60;
   const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
   const formattedDuration = `${minutes}:${formattedSeconds}`;
-  console.log(formattedDuration);
   return formattedDuration;
 }
 
@@ -68,7 +67,6 @@ function addEntry() {
   if (workout.value && timeLimit.value && reps.value) {
     workouts.push(data);
     localStorage.setItem("workouts", JSON.stringify(workouts));
-    console.log(workouts);
     displayEntry();
   } else {
     alert("Please enter a valid exercise name and duration.");
