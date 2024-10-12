@@ -23,7 +23,7 @@ button {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 5% 10%;
+  margin: 4% 10%;
   background-color: #00affe;
   border-right: #222831 8px solid;
   border-bottom: #222831 8px solid;
@@ -54,6 +54,8 @@ button {
   border-radius: 1rem;
   border-right: #222831 8px solid;
   border-bottom: #222831 8px solid;
+  width: 74%;
+  margin-left: 10%;
 }
 
 .main {
