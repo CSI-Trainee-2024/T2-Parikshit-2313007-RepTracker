@@ -83,6 +83,7 @@ button {
 #timeLimit {
   height: 2rem;
   width: 10%;
+  min-width: 81px;
   padding: 5px;
   border: 2px solid #222831;
   border-radius: 0.3rem;
@@ -162,26 +163,82 @@ button {
   .col-4 {
     flex-basis: 10%;
   }
+}
 
-  @media all and (max-width: 767px) {
-    .tableRow {
-    }
-    li {
-      display: block;
-    }
-    .col {
-      flex-basis: 100%;
-    }
-    .col {
-      display: flex;
-      padding: 10px 0;
-      &:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-      }
-    }
+@media (width<=1450px) {
+  .main-container {
+    padding: 0 3%;
+  }
+}
+
+@media (width<=1230px) {
+  .main-container {
+    padding: 0 0%;
+  }
+  .head {
+    margin: 5% 5%;
+  }
+  .list-container {
+    width: 83.5%;
+    margin-left: 5%;
+  }
+}
+
+@media (width<=1065px) {
+  .main {
+    justify-content: space-between;
+  }
+  #workout {
+    width: 30vw;
+  }
+
+  #reps {
+    width: 10vw;
+  }
+}
+
+@media (width<=870px) {
+  .head {
+    margin: 5% 2%;
+    font-size: 1.7vw;
+    height: 15vw;
+  }
+  .list-container {
+    width: 90%;
+    margin: 0 2%;
+  }
+}
+
+@media (width<=763px) {
+  .main {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* display: block; */
+  }
+  #workout {
+    flex-grow: 0.2;
+  }
+  #reps {
+    flex-grow: 0.6;
+  }
+  #timelimit {
+    min-width: none;
+  }
+  #addWorkoutBtn {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+@media (width<=600px) {
+  .head {
+    display: flex;
+    flex-direction: column;
+    height: 25vw;
+    font-size: 2.7vw;
+  }
+  #startWorkoutBtn {
+    margin-bottom: 1rem;
+    padding: 5px;
   }
 }

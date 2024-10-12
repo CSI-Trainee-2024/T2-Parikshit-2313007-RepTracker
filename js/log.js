@@ -1,17 +1,13 @@
-// log.js
-
 let workoutLog = JSON.parse(localStorage.getItem("workoutLog")) || [];
 const workoutLogList = document.getElementById("workoutLog");
 
-// Display the workout log
 function updateWorkoutLog() {
-  const workoutLogList = document.querySelector("#workoutLog"); // Get the DOM element
-  // workoutLogList.innerHTML = ""; // Clear existing log
+  const workoutLogList = document.querySelector("#workoutLog");
   let workouts = JSON.parse(localStorage.getItem("workouts")) || [];
   workoutLog.forEach((log, index) => {
-    const compTime = formatTime(log.completedTime); // Format completedTime properly
+    const compTime = formatTime(log.completedTime);
     const planTime = formatTime(workouts[index].duration);
-    // Create the table row as a string and append it using innerHTML
+
     const li = `
           <li class="tableRow">
               <div class="col col-1">${index + 1}</div>
@@ -20,11 +16,10 @@ function updateWorkoutLog() {
               <div class="col col-4">${compTime}</div>
           </li>
       `;
-    workoutLogList.innerHTML += li; // Append the new row to the workout log
+    workoutLogList.innerHTML += li;
   });
 }
 
-// Helper function to format time in MM:SS format
 function formatTime(seconds) {
   const minutes = Math.floor(seconds / 60);
   const remainingSeconds = seconds % 60;
@@ -42,16 +37,15 @@ function formatTime(unFormatedTime) {
 }
 
 document.getElementById("goBackBtn").addEventListener("click", () => {
-  window.location.href = "index.html"; // Redirect to the add exercise page
+  window.location.href = "index.html";
   localStorage.removeItem("workoutLog");
 });
 
 document.getElementById("restartBtn").addEventListener("click", () => {
-  window.location.href = "index.html"; // Redirect to the add exercise page
+  window.location.href = "index.html";
   localStorage.removeItem("workoutLog");
   localStorage.removeItem("workouts");
 });
 
-// Update the workout log when the page loads
 window.onload = updateWorkoutLog;
 ``;

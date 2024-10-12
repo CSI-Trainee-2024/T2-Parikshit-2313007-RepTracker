@@ -24,7 +24,7 @@ function displayEntry() {
       workouts[i].reps
     }</div>
                 <div class="col col-3">${formatTime(workouts[i].duration)}</div>
-                <button class="col col-4 deleteBtn">X</button>
+                <button class="col col-4 deleteBtn" data-index="${i}">X</button>
             </li>`;
   }
   document.querySelector(".table").innerHTML = items;
@@ -33,9 +33,10 @@ function displayEntry() {
 
 function deleteEntry() {
   let deleteBtns = document.querySelectorAll(".deleteBtn");
+
   deleteBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      let i = btn.getAttribute("i");
+      let i = parseInt(btn.getAttribute("data-index"));
       deleteItem(i);
     });
   });

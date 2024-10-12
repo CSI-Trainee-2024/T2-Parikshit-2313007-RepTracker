@@ -1,5 +1,3 @@
-// workout.js
-
 let workouts = JSON.parse(localStorage.getItem("workouts")) || [];
 let workoutLog = JSON.parse(localStorage.getItem("workoutLog")) || [];
 let currentWorkoutIndex = 0;
@@ -11,17 +9,15 @@ const currentExercise = document.getElementById("currentExercise");
 const timerDisplay = document.getElementById("timer");
 const endExerciseBtn = document.getElementById("endExerciseBtn");
 
-// Start the workout when the page loads
 window.onload = () => {
   if (workouts.length > 0) {
     startCountdown(5, startExercise); // 10-second countdown before starting
   } else {
     alert("No workouts found! Please add exercises first.");
-    window.location.href = "index.html"; // Redirect back to the add exercise page
+    window.location.href = "index.html";
   }
 };
 
-// Start countdown timer
 function startCountdown(seconds, callback) {
   currentTime = seconds;
   updateTimerDisplay();
@@ -36,7 +32,6 @@ function startCountdown(seconds, callback) {
   }, 1000);
 }
 
-// Start the next exercise
 function startExercise() {
   if (currentWorkoutIndex < workouts.length) {
     const workout = workouts[currentWorkoutIndex];
@@ -61,7 +56,6 @@ function startExercise() {
   }
 }
 
-// Start rest period
 function startRest() {
   if (currentWorkoutIndex < workouts.length) {
     currentExercise.textContent = `Resting Time...`;
@@ -69,7 +63,6 @@ function startRest() {
   }
 }
 
-// End exercise early
 endExerciseBtn.addEventListener("click", () => {
   if (currentWorkoutIndex < workouts.length) {
     clearInterval(workoutInterval);
@@ -82,21 +75,18 @@ endExerciseBtn.addEventListener("click", () => {
   }
 });
 
-// Log the exercise completion
 function logExercise(name, completedTime) {
   workoutLog.push({ name, completedTime });
   localStorage.setItem("workoutLog", JSON.stringify(workoutLog));
 }
 
-// End the workout
 function endWorkout() {
   currentExercise.textContent = "Workout Complete!";
   timerDisplay.textContent = "Timer: 0s";
   endExerciseBtn.disabled = true;
-  window.location.href = "log.html"; // Redirect to the workout log page
+  window.location.href = "log.html";
 }
 
-// Update timer display
 function updateTimerDisplay() {
   const minutes = Math.floor(currentTime / 60);
   const seconds = currentTime % 60;
@@ -104,6 +94,6 @@ function updateTimerDisplay() {
   timerDisplay.textContent = `${minutes}:${formattedSeconds}`;
 }
 document.getElementById("quitExercise").addEventListener("click", () => {
-  window.location.href = "index.html"; // Redirect to the add exercise page
+  window.location.href = "index.html";
   localStorage.removeItem("workoutLog");
 });
