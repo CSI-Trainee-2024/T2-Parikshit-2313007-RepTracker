@@ -36,7 +36,7 @@ function startExercise() {
   if (currentWorkoutIndex < workouts.length) {
     const workout = workouts[currentWorkoutIndex];
     // console.log(workout);
-    currentExercise.textContent = `Current Exercise: ${workout.name}`;
+    currentExercise.textContent = `Current Exercise: ${workout.name} -- X${workout.reps}`;
     currentTime = workout.duration;
     updateTimerDisplay();
     endExerciseBtn.disabled = false;
