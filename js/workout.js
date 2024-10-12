@@ -82,7 +82,7 @@ function logExercise(name, completedTime) {
 
 function endWorkout() {
   currentExercise.textContent = "Workout Complete!";
-  timerDisplay.textContent = "Timer: 0s";
+  timerDisplay.textContent = "0";
   endExerciseBtn.disabled = true;
   window.location.href = "log.html";
 }
