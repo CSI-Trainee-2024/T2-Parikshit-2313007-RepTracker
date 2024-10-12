@@ -23,7 +23,7 @@ body {
 }
 
 #endExerciseBtn {
-  margin-top: -5.5rem;
+  margin-top: -4rem;
   height: 4rem;
   padding: 0 2%;
   border-radius: 5px;
@@ -35,9 +35,9 @@ body {
   font-weight: 600;
   font-size: 1.1rem;
   transition: 0.1s all ease-in-out;
-  position: relative;
-  top: -16rem;
-  left: 9.2rem;
+  /* position: relative;
+  bottom: 18vw;
+  left: 18%; */
 }
 #endExerciseBtn:active {
   border: none;
@@ -49,7 +49,7 @@ body {
 }
 
 .current-workout {
-  width: 55vw;
+  width: 52.2vw;
   background-color: #ffff;
   padding: 2% 5%;
   border-radius: 1rem;
@@ -65,15 +65,26 @@ body {
 .right img {
   height: 30vw;
   transform: rotateY(3.142rad);
-  overflow: hidden;
+  margin-left: -10%;
+  /* overflow: hidden; */
+}
+
+.left {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 10%;
 }
 
 #currentExercise {
-  height: 5rem;
+  height: 4rem;
   /* width: 80%; */
   background-color: #eeeeee;
   font-size: 2.5rem;
-  padding: 2rem;
+  padding: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +97,7 @@ body {
 #timer {
   margin-top: -1rem;
   height: 6rem;
+  font-size: 6rem;
   width: fit-content;
   color: #ffffff;
   background-color: rgb(44, 42, 42);
@@ -96,10 +108,9 @@ body {
   border: 2px solid #222831;
   border-radius: 1rem;
   font-weight: 800;
-  font-size: 6rem;
-  position: relative;
-  top: 2rem;
-  left: 7rem;
+  /* position: relative;
+  top: 2%;
+  left: 30%; */
 }
 
 #quitExercise {
@@ -118,4 +129,95 @@ body {
 #quitExercise:active {
   border: none;
   transition: 0.1s all ease-in-out;
+}
+
+@media (width<=1100px) {
+  .container-workout {
+    padding: 0 3%;
+  }
+  .title {
+    width: 80vw;
+  }
+  .current-workout {
+    width: 70vw;
+  }
+  .right img {
+    margin-left: 20%;
+  }
+}
+
+@media (width<=829px) {
+  .container-workout {
+    padding: 0 1%;
+  }
+  .title {
+    width: 90vw;
+  }
+  .current-workout {
+    width: 80vw;
+  }
+  #timer {
+    height: 4rem;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+  }
+  #endExerciseBtn {
+    height: 3rem;
+  }
+  .right img {
+    margin-left: 40%;
+  }
+}
+
+@media (width<=720px) {
+  .title {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  #quitExercise {
+    margin-left: 0%;
+    margin-bottom: 2rem;
+    padding: 10px 15px;
+  }
+  #currentExercise {
+    font-size: 5.2vw;
+    padding: 5vw;
+    height: 5vw;
+  }
+}
+
+@media (width<=568px) {
+  .timeBox {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .right img {
+    margin: 0%;
+    height: 65vw;
+  }
+
+  .left {
+    position: static;
+  }
+
+  #timer {
+    margin-top: 0.5rem;
+    height: 5rem;
+    font-size: 5rem;
+    width: 70vw;
+  }
+
+  #endExerciseBtn {
+    margin-bottom: 0.5rem;
+  }
+  .title {
+    font-size: 3vw;
+  }
+  #quitExercise {
+    height: 2rem;
+    padding: 1% 4%;
+  }
 }
