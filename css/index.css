@@ -162,6 +162,10 @@ button {
   }
 }
 
+.btm-img {
+  width: 90%;
+}
+
 @media (width<=1450px) {
   .main-container {
     padding: 0 3%;

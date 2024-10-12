@@ -69,8 +69,10 @@ function addEntry() {
     workouts.push(data);
     localStorage.setItem("workouts", JSON.stringify(workouts));
     displayEntry();
+    workout.value = "";
+    // reps.value=""
   } else {
-    alert("Please enter a valid exercise name and duration.");
+    alert("Please enter a valid exercise name,reps and duration.");
   }
 }
 

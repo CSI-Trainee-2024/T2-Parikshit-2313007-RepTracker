@@ -1,5 +1,4 @@
 let workoutLog = JSON.parse(localStorage.getItem("workoutLog")) || [];
-const workoutLogList = document.getElementById("workoutLog");
 
 function updateWorkoutLog() {
   const workoutLogList = document.querySelector("#workoutLog");
@@ -28,14 +27,6 @@ function formatTime(seconds) {
   return `${minutes}:${formattedSeconds}`;
 }
 
-function formatTime(unFormatedTime) {
-  const minutes = Math.floor(unFormatedTime / 60);
-  const seconds = unFormatedTime % 60;
-  const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-  const formattedDuration = `${minutes}:${formattedSeconds}`;
-  return formattedDuration;
-}
-
 document.getElementById("goBackBtn").addEventListener("click", () => {
   window.location.href = "index.html";
   localStorage.removeItem("workoutLog");
@@ -48,4 +39,3 @@ document.getElementById("restartBtn").addEventListener("click", () => {
 });
 
 window.onload = updateWorkoutLog;
-``;

@@ -2,7 +2,7 @@ let workouts = JSON.parse(localStorage.getItem("workouts")) || [];
 let workoutLog = JSON.parse(localStorage.getItem("workoutLog")) || [];
 let currentWorkoutIndex = 0;
 let workoutInterval;
-let restTime = 5; // 10 seconds rest between exercises
+let restTime = 5; // rest between exercises
 let currentTime = 0;
 
 const currentExercise = document.getElementById("currentExercise");
@@ -35,7 +35,7 @@ function startCountdown(seconds, callback) {
 function startExercise() {
   if (currentWorkoutIndex < workouts.length) {
     const workout = workouts[currentWorkoutIndex];
-    console.log(workout);
+    // console.log(workout);
     currentExercise.textContent = `Current Exercise: ${workout.name}`;
     currentTime = workout.duration;
     updateTimerDisplay();
