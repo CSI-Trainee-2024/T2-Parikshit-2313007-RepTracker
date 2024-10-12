@@ -11,7 +11,7 @@
   border-right: #222831 4px solid;
   border-bottom: #222831 4px solid;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   transition: 0.1s all ease-in-out;
 }
 #restartBtn:active {
@@ -97,38 +97,13 @@ h2 {
     flex-basis: 10%;
   }
   .col-2 {
-    flex-basis: 40%;
-  }
-  .col-3 {
-    flex-basis: 15%;
-  }
-  .col-4 {
     flex-basis: 25%;
   }
-
-  @media all and (max-width: 767px) {
-    .table-header {
-      display: none;
-    }
-    .table-row {
-    }
-    li {
-      display: block;
-    }
-    .col {
-      flex-basis: 100%;
-    }
-    .col {
-      display: flex;
-      padding: 10px 0;
-      &:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-      }
-    }
+  .col-3 {
+    flex-basis: 20%;
+  }
+  .col-4 {
+    flex-basis: 20%;
   }
 }
 
@@ -149,4 +124,37 @@ h2 {
 #goBackBtn:active {
   border: none;
   transition: 0.1s all ease-in-out;
+}
+
+@media (width<=720px) {
+  .title {
+    padding-bottom: 2rem;
+    font-size: 2.5vh !important;
+  }
+  #restartBtn {
+    font-size: 4vw;
+    height: 20vw;
+  }
+}
+
+@media (width<=900px) {
+  .workout-log h3 {
+    margin-left: 5%;
+    font-size: 5vw;
+  }
+  .workout-log h3 img {
+    width: 50%;
+    margin-right: 0;
+  }
+  .responsive-table {
+    li {
+      padding: 25px 10px;
+    }
+    .tableRow {
+      font-size: 1rem;
+    }
+  }
+  .responsive-table {
+    overflow-x: scroll;
+  }
 }
